@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import s from './MainComponent.module.css'
 
 const MainComponent = () => {
   const [input, setInput] = useState("");
@@ -6,7 +7,7 @@ const MainComponent = () => {
   const [num] = useState(4);
   const [num1] = useState(5);
 
-//   const sum = useCallback(() => num + num1, [num, num1]);
+  //   const sum = useCallback(() => num + num1, [num, num1]);
 
   const newArr = useCallback(() => [num, num1], [num, num1]);
 
@@ -19,6 +20,7 @@ const MainComponent = () => {
   return (
     <div>
       <input
+        className={s.inp}
         type="text"
         placeholder="input"
         value={input}
