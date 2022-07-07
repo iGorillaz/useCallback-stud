@@ -6,9 +6,9 @@ const MainComponent = () => {
   const [num] = useState(4);
   const [num1] = useState(5);
 
-  const sum = useCallback(() => num + num1, [num, num1]);
+//   const sum = useCallback(() => num + num1, [num, num1]);
 
-  const newArr = () => [num, num1];
+  const newArr = useCallback(() => [num, num1], [num, num1]);
 
   useEffect(() => {
     //  console.log(`Here! New sum! ${sum()} `);
