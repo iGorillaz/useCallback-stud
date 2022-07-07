@@ -8,10 +8,13 @@ const MainComponent = () => {
 
   const sum = useCallback(() => num + num1, [num, num1]);
 
+  const newArr = () => [num, num1];
+
   useEffect(() => {
-    console.log(`Here! New sum! ${sum()} `);
-	 setResult(sum())
-  }, [sum]);
+    //  console.log(`Here! New sum! ${sum()} `);
+    console.log(`Here! New arr! ${newArr()}`);
+    setResult(newArr()); // This variant loop rendering without useCallback
+  }, [newArr]);
 
   return (
     <div>
